@@ -42,11 +42,11 @@
               "isTrustBoundary": true,
               "hasOpenThreats": false,
               "crossingFlows": [
-                "44ddaffd-1635-49df-82f2-a46cdeaa189f",
                 "2c4b70d8-2bcc-4920-a151-5694805fae47",
+                "44ddaffd-1635-49df-82f2-a46cdeaa189f",
                 "82111742-1d63-4ac9-829c-85536194de39",
-                "206c0d16-1c89-4961-8bcf-5037da0319e9",
                 "0a09693e-885b-41f7-86df-a3c92d2c7453",
+                "206c0d16-1c89-4961-8bcf-5037da0319e9",
                 "1dddbf44-695f-4049-9073-b56cfb659283",
                 "ed6e92f7-d8cd-415f-a0e3-aee1d3ec004c"
               ],
@@ -65,7 +65,7 @@
           },
           {
             "position": {
-              "x": 874.9999999999995,
+              "x": 854.9999999999995,
               "y": 700
             },
             "size": {
@@ -89,12 +89,12 @@
               "hasOpenThreats": false,
               "crossingFlows": [
                 "f9390b01-c892-4355-bda0-e28479a1bede",
-                "9c93d719-147f-4e48-abbf-e441119bfcf5",
                 "91f3ba22-375c-42b3-ab90-b977a1c0d58a",
                 "4489ab94-a487-46d4-a08a-be43e5d5cf36",
                 "20627f75-249f-4084-b80e-578c6823602f",
                 "69520afe-3804-4366-9f42-0f7f83554635",
-                "9ec150a4-7f30-4de6-9207-ca5e8362e34b"
+                "9ec150a4-7f30-4de6-9207-ca5e8362e34b",
+                "9c93d719-147f-4e48-abbf-e441119bfcf5"
               ],
               "containedElements": [
                 "315f640c-3c7e-426e-a542-35d54f1a0487"
@@ -727,8 +727,8 @@
                 "text": "Auth"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -825,12 +825,34 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "bc1b7df3-2007-4fd3-a4bb-d4b9ab95abfd",
+                  "title": "Clave Hardcodeada",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Spoofing",
+                  "description": "en app/config, la clave secreta de tokens JWT está hardcodeada en el código como \"dev-secret-key-change-in-production-2024\". ",
+                  "mitigation": "Cambiar la clave, usar encriptación y que no esté hardcodeada.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 6,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 1,
+                "tampering": 0,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 0,
+                "elevationOfPrivilege": 0
+              }
             }
           },
           {
@@ -847,8 +869,8 @@
                 "text": "Docs"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -944,12 +966,34 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "3c165002-76a2-45b0-a026-039c60751412",
+                  "title": "Placeholder de Verificación de Privilegios.",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Elevation of privilege",
+                  "description": "En app/routes/documentos.py, el endpoint para crear documentos usa \"es_admin: bool = Depends(verification)\". Esta función actualmente es un placeholder que siempre retorna True.\n",
+                  "mitigation": "Implementar correctamente la función de verificación.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 1,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 0,
+                "tampering": 0,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 0,
+                "elevationOfPrivilege": 1
+              }
             },
             "zIndex": 8
           },
@@ -1090,8 +1134,8 @@
                 "text": "Préstamos"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -1187,12 +1231,47 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "7ce8d525-9c32-431b-b5cd-6313c7ff1ab6",
+                  "title": "Generación de Préstamos sin autenticación.",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Denial of service",
+                  "description": "Los endpoints /registrar o /registrar-desde-rut-isbn no tienen protección de autenticación. Cualquier persona podría registrar un préstamo sin iniciar sesión, por lo que se está expuesto a creación de datos falsos o de un ataque flooding.",
+                  "mitigation": "Forzar a autenticación y limitar cantidad de préstamos por usuario.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 5,
+                  "score": ""
+                },
+                {
+                  "id": "2a22d0f1-0037-47ac-ae96-7224a60d085e",
+                  "title": "Condición de Carrera",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Tampering",
+                  "description": "Las peticiones se manejan de forma asíncrona/concurrente. Si en el mismo instante se registra un préstamo a dos usuarios distintos, se estaría prestando el mismo ejemplar.",
+                  "mitigation": "Implementar bloqueos a nivel de base de datos.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 7,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 0,
+                "tampering": 1,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 1,
+                "elevationOfPrivilege": 0
+              }
             },
             "zIndex": 10
           },
@@ -1346,56 +1425,8 @@
             "shape": "flow",
             "attrs": {
               "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Envío \nCredenciales",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": [],
-              "trustBoundaryIds": [
-                "d2a9a103-eec3-4c0c-a3d3-41d0cc88e83b"
-              ]
-            },
-            "labels": [
-              "Envío \nCredenciales"
-            ],
-            "id": "44ddaffd-1635-49df-82f2-a46cdeaa189f",
-            "source": {
-              "cell": "95d79f2a-1d45-49c7-a319-80cf169d0548",
-              "port": "af7c74f8-751e-4fc4-9c9e-0a117fb00bb1"
-            },
-            "target": {
-              "cell": "1e9bba84-67fa-4606-b61a-c13aa6fe2239",
-              "port": "00d92627-897b-4417-8589-753505de485b"
-            },
-            "vertices": []
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "targetMarker": {
                   "name": "block"
                 },
@@ -1416,15 +1447,34 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isBidirectional": false,
               "isEncrypted": false,
               "isPublicNetwork": false,
               "protocol": "",
-              "threats": [],
+              "threats": [
+                {
+                  "id": "39a6df30-f932-42e5-8650-483fc0f1bb9d",
+                  "title": "Potencial robo de credenciales.",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Information disclosure",
+                  "description": "en app/config.py. Los orígenes CORS son HTTP, no HTTPS. Las credenciales viajarán sin ser cifradas, alguien que esté escuchando (Man-in-the-middle) puede robar tokens.",
+                  "mitigation": "Cambiar protocolo a HTTPS y verificar correcto cifrado de datos.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 2,
+                  "score": ""
+                }
+              ],
               "trustBoundaryIds": [
                 "d2a9a103-eec3-4c0c-a3d3-41d0cc88e83b"
-              ]
+              ],
+              "threatFrequency": {
+                "tampering": 0,
+                "informationDisclosure": 2,
+                "denialOfService": 0
+              }
             },
             "labels": [
               "Envío de Emails"
@@ -1439,60 +1489,6 @@
               "port": "b6e166b9-5099-4944-a98e-28a24442e0e8"
             },
             "vertices": []
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Peticiones\nde Catálogo",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": [],
-              "trustBoundaryIds": [
-                "d2a9a103-eec3-4c0c-a3d3-41d0cc88e83b"
-              ]
-            },
-            "labels": [
-              "Peticiones\nde Catálogo"
-            ],
-            "id": "82111742-1d63-4ac9-829c-85536194de39",
-            "source": {
-              "cell": "95d79f2a-1d45-49c7-a319-80cf169d0548",
-              "port": "af7c74f8-751e-4fc4-9c9e-0a117fb00bb1"
-            },
-            "target": {
-              "cell": "0c0f9f18-bc5d-41ad-ae4a-5d8d268a307c",
-              "port": "00d92627-897b-4417-8589-753505de485b"
-            },
-            "vertices": [
-              {
-                "x": 740,
-                "y": 435
-              }
-            ]
           },
           {
             "shape": "flow",
@@ -1562,234 +1558,6 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Creación de reservas (user)\nManejo de reservas (bibliotecario)",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": [],
-              "trustBoundaryIds": [
-                "d2a9a103-eec3-4c0c-a3d3-41d0cc88e83b"
-              ]
-            },
-            "labels": [
-              "Creación de reservas (user)\nManejo de reservas (bibliotecario)"
-            ],
-            "id": "206c0d16-1c89-4961-8bcf-5037da0319e9",
-            "source": {
-              "cell": "95d79f2a-1d45-49c7-a319-80cf169d0548",
-              "port": "af7c74f8-751e-4fc4-9c9e-0a117fb00bb1"
-            },
-            "target": {
-              "cell": "5e66ad3a-094b-47df-965d-f680fc5042a8",
-              "port": "00d92627-897b-4417-8589-753505de485b"
-            },
-            "vertices": [
-              {
-                "x": 720,
-                "y": 530
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Peticiones HTTP REST",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": [],
-              "trustBoundaryIds": [
-                "d2a9a103-eec3-4c0c-a3d3-41d0cc88e83b"
-              ]
-            },
-            "labels": [
-              "Peticiones HTTP REST"
-            ],
-            "id": "0a09693e-885b-41f7-86df-a3c92d2c7453",
-            "source": {
-              "cell": "95d79f2a-1d45-49c7-a319-80cf169d0548",
-              "port": "af7c74f8-751e-4fc4-9c9e-0a117fb00bb1"
-            },
-            "target": {
-              "cell": "4609a5ac-85e0-484d-bd59-4997cbcc0700",
-              "port": "d39c5bc7-c416-4ebf-a876-d392fba3db3f"
-            },
-            "vertices": [
-              {
-                "x": 800,
-                "y": 200
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Peticiones HTTP REST",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": [],
-              "trustBoundaryIds": [
-                "d2a9a103-eec3-4c0c-a3d3-41d0cc88e83b"
-              ]
-            },
-            "labels": [
-              "Peticiones HTTP REST"
-            ],
-            "id": "1dddbf44-695f-4049-9073-b56cfb659283",
-            "source": {
-              "cell": "95d79f2a-1d45-49c7-a319-80cf169d0548",
-              "port": "af7c74f8-751e-4fc4-9c9e-0a117fb00bb1"
-            },
-            "target": {
-              "cell": "c932084e-4841-439e-b303-35809bcd4840",
-              "port": "af7c74f8-751e-4fc4-9c9e-0a117fb00bb1"
-            },
-            "vertices": [
-              {
-                "x": 720,
-                "y": 210
-              },
-              {
-                "x": 1080,
-                "y": 210
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Peticiones HTTP REST",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": [],
-              "trustBoundaryIds": [
-                "d2a9a103-eec3-4c0c-a3d3-41d0cc88e83b"
-              ]
-            },
-            "labels": [
-              "Peticiones HTTP REST"
-            ],
-            "id": "ed6e92f7-d8cd-415f-a0e3-aee1d3ec004c",
-            "source": {
-              "cell": "95d79f2a-1d45-49c7-a319-80cf169d0548",
-              "port": "af7c74f8-751e-4fc4-9c9e-0a117fb00bb1"
-            },
-            "target": {
-              "cell": "c6d94fee-3180-42a1-ad39-a6df89edd12e",
-              "port": "af7c74f8-751e-4fc4-9c9e-0a117fb00bb1"
-            },
-            "vertices": [
-              {
-                "x": 632,
-                "y": 160
-              },
-              {
-                "x": 960,
-                "y": 90
-              },
-              {
-                "x": 1200,
-                "y": 190
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
               "name": "",
               "description": "",
               "outOfScope": false,
@@ -1812,55 +1580,6 @@
             "source": {
               "cell": "fdbc11d3-1ebd-496c-9511-0e82c9b91b10",
               "port": "af7c74f8-751e-4fc4-9c9e-0a117fb00bb1"
-            },
-            "target": {
-              "cell": "315f640c-3c7e-426e-a542-35d54f1a0487",
-              "port": "899e052a-298e-4b66-b140-cdee8f854022"
-            },
-            "vertices": []
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": [],
-              "trustBoundaryIds": [
-                "1cb50b62-937a-4172-82fa-cd7836593064"
-              ]
-            },
-            "labels": [
-              ""
-            ],
-            "id": "9c93d719-147f-4e48-abbf-e441119bfcf5",
-            "source": {
-              "cell": "c932084e-4841-439e-b303-35809bcd4840",
-              "port": "00d92627-897b-4417-8589-753505de485b"
             },
             "target": {
               "cell": "315f640c-3c7e-426e-a542-35d54f1a0487",
@@ -2119,6 +1838,477 @@
             "vertices": []
           },
           {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "a",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "id": "a23eeae2-0b6b-42d0-b468-91182d81aa9e",
+                  "title": "New STRIDE threat",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Tampering",
+                  "description": "Provide a description for this threat",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": true,
+                  "number": 10,
+                  "score": ""
+                }
+              ],
+              "trustBoundaryIds": [
+                "1cb50b62-937a-4172-82fa-cd7836593064"
+              ]
+            },
+            "labels": [
+              ""
+            ],
+            "id": "9c93d719-147f-4e48-abbf-e441119bfcf5",
+            "source": {
+              "cell": "c932084e-4841-439e-b303-35809bcd4840",
+              "port": "00d92627-897b-4417-8589-753505de485b"
+            },
+            "target": {
+              "cell": "315f640c-3c7e-426e-a542-35d54f1a0487",
+              "port": "899e052a-298e-4b66-b140-cdee8f854022"
+            },
+            "vertices": [
+              {
+                "x": 1020,
+                "y": 570
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": "block"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Envío \nCredenciales",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": true,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "id": "4e4ca38e-39d6-49ea-8ae2-0b196d295b27",
+                  "title": "Potencial robo de credenciales.",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Information disclosure",
+                  "description": "en app/config.py. Los orígenes CORS son HTTP, no HTTPS. Las credenciales viajarán sin ser cifradas, alguien que esté escuchando (Man-in-the-middle) puede robar tokens.",
+                  "mitigation": "Cambiar protocolo a HTTPS y verificar correcto cifrado de credenciales.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 3,
+                  "score": ""
+                }
+              ],
+              "trustBoundaryIds": [
+                "d2a9a103-eec3-4c0c-a3d3-41d0cc88e83b"
+              ],
+              "threatFrequency": {
+                "tampering": 0,
+                "informationDisclosure": 1,
+                "denialOfService": 0
+              }
+            },
+            "labels": [
+              "Envío \nCredenciales"
+            ],
+            "id": "44ddaffd-1635-49df-82f2-a46cdeaa189f",
+            "source": {
+              "cell": "95d79f2a-1d45-49c7-a319-80cf169d0548",
+              "port": "af7c74f8-751e-4fc4-9c9e-0a117fb00bb1"
+            },
+            "target": {
+              "cell": "1e9bba84-67fa-4606-b61a-c13aa6fe2239",
+              "port": "00d92627-897b-4417-8589-753505de485b"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": "block"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Peticiones\nde Catálogo",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": true,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": [
+                "d2a9a103-eec3-4c0c-a3d3-41d0cc88e83b"
+              ]
+            },
+            "labels": [
+              "Peticiones\nde Catálogo"
+            ],
+            "id": "82111742-1d63-4ac9-829c-85536194de39",
+            "source": {
+              "cell": "95d79f2a-1d45-49c7-a319-80cf169d0548",
+              "port": "af7c74f8-751e-4fc4-9c9e-0a117fb00bb1"
+            },
+            "target": {
+              "cell": "0c0f9f18-bc5d-41ad-ae4a-5d8d268a307c",
+              "port": "00d92627-897b-4417-8589-753505de485b"
+            },
+            "vertices": [
+              {
+                "x": 740,
+                "y": 435
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": "block"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Peticiones HTTP REST",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": true,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": [
+                "d2a9a103-eec3-4c0c-a3d3-41d0cc88e83b"
+              ]
+            },
+            "labels": [
+              "Peticiones HTTP REST"
+            ],
+            "id": "0a09693e-885b-41f7-86df-a3c92d2c7453",
+            "source": {
+              "cell": "95d79f2a-1d45-49c7-a319-80cf169d0548",
+              "port": "af7c74f8-751e-4fc4-9c9e-0a117fb00bb1"
+            },
+            "target": {
+              "cell": "4609a5ac-85e0-484d-bd59-4997cbcc0700",
+              "port": "d39c5bc7-c416-4ebf-a876-d392fba3db3f"
+            },
+            "vertices": [
+              {
+                "x": 800,
+                "y": 200
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": "block"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Creación de reservas (user)\nManejo de reservas (bibliotecario)",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": true,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": [
+                "d2a9a103-eec3-4c0c-a3d3-41d0cc88e83b"
+              ]
+            },
+            "labels": [
+              "Creación de reservas (user)\nManejo de reservas (bibliotecario)"
+            ],
+            "id": "206c0d16-1c89-4961-8bcf-5037da0319e9",
+            "source": {
+              "cell": "95d79f2a-1d45-49c7-a319-80cf169d0548",
+              "port": "af7c74f8-751e-4fc4-9c9e-0a117fb00bb1"
+            },
+            "target": {
+              "cell": "5e66ad3a-094b-47df-965d-f680fc5042a8",
+              "port": "00d92627-897b-4417-8589-753505de485b"
+            },
+            "vertices": [
+              {
+                "x": 720,
+                "y": 530
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": "block"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Peticiones HTTP REST",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": true,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": [
+                "d2a9a103-eec3-4c0c-a3d3-41d0cc88e83b"
+              ]
+            },
+            "labels": [
+              "Peticiones HTTP REST"
+            ],
+            "id": "1dddbf44-695f-4049-9073-b56cfb659283",
+            "source": {
+              "cell": "95d79f2a-1d45-49c7-a319-80cf169d0548",
+              "port": "af7c74f8-751e-4fc4-9c9e-0a117fb00bb1"
+            },
+            "target": {
+              "cell": "c932084e-4841-439e-b303-35809bcd4840",
+              "port": "af7c74f8-751e-4fc4-9c9e-0a117fb00bb1"
+            },
+            "vertices": [
+              {
+                "x": 720,
+                "y": 210
+              },
+              {
+                "x": 1030,
+                "y": 190
+              },
+              {
+                "x": 1150,
+                "y": 310
+              },
+              {
+                "x": 1150,
+                "y": 430
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": "block"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Peticiones HTTP REST",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": true,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "id": "266046ab-d3fa-46ad-9169-7b597d4a7ba3",
+                  "title": "Enumeración y Scraping",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Information disclosure",
+                  "description": "Un atacante puede generar RUTs válidos y enviarlos al endpoint app/api/usuarios.py y robarse la base de datos completa.",
+                  "mitigation": "Agregar protección que requiera verificación.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 11,
+                  "score": ""
+                }
+              ],
+              "trustBoundaryIds": [
+                "d2a9a103-eec3-4c0c-a3d3-41d0cc88e83b"
+              ],
+              "threatFrequency": {
+                "tampering": 0,
+                "informationDisclosure": 1,
+                "denialOfService": 0
+              }
+            },
+            "labels": [
+              "Peticiones HTTP REST"
+            ],
+            "id": "ed6e92f7-d8cd-415f-a0e3-aee1d3ec004c",
+            "source": {
+              "cell": "95d79f2a-1d45-49c7-a319-80cf169d0548",
+              "port": "af7c74f8-751e-4fc4-9c9e-0a117fb00bb1"
+            },
+            "target": {
+              "cell": "c6d94fee-3180-42a1-ad39-a6df89edd12e",
+              "port": "af7c74f8-751e-4fc4-9c9e-0a117fb00bb1"
+            },
+            "vertices": [
+              {
+                "x": 632,
+                "y": 160
+              },
+              {
+                "x": 960,
+                "y": 90
+              },
+              {
+                "x": 1020,
+                "y": 90
+              },
+              {
+                "x": 1200,
+                "y": 190
+              }
+            ],
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead"
+              ],
+              "name": null
+            }
+          },
+          {
             "position": {
               "x": 802,
               "y": 590
@@ -2252,8 +2442,8 @@
                 "text": "Devoluciones"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -2349,12 +2539,34 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "8ad081ec-fa16-4f9b-8d64-a6a1f4c1c366",
+                  "title": "Sanción sin registro.",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Repudiation",
+                  "description": "Al calcular los días de atraso, los días de sanción, solo se imprime en consola del servidor. La sanción no es correctamente registrada.",
+                  "mitigation": "Implementar correctamente la sanción",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 8,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 0,
+                "tampering": 0,
+                "repudiation": 1,
+                "informationDisclosure": 0,
+                "denialOfService": 0,
+                "elevationOfPrivilege": 0
+              }
             },
             "zIndex": 12
           },
@@ -2474,7 +2686,15 @@
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [],
+              "threatFrequency": {
+                "spoofing": 0,
+                "tampering": 0,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 0,
+                "elevationOfPrivilege": 0
+              }
             },
             "zIndex": 13
           },
@@ -2492,11 +2712,13 @@
                 "text": "PostgreSQL"
               },
               "topLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               },
               "bottomLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -2593,13 +2815,33 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isALog": false,
               "isEncrypted": false,
               "isSigned": false,
               "storesCredentials": false,
               "storesInventory": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "8509a287-727e-470d-80df-e52037bb9ec4",
+                  "title": "Exposición de BDD",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Tampering",
+                  "description": "El contenedor actualmente está siendo expuesto a la nube y a todo internet, con contraseñas en texto plano. \nCualquier usuario o cliente SQL puede conectarse y borrar todo.",
+                  "mitigation": "Aislar correctamente el contenedor.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 4,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 1,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 0
+              }
             }
           }
         ]
@@ -2607,6 +2849,6 @@
     ],
     "diagramTop": 2,
     "reviewer": "",
-    "threatTop": 0
+    "threatTop": 11
   }
 }
