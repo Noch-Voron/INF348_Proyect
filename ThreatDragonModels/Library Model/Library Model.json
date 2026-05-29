@@ -1847,75 +1847,6 @@
                   "name": "block"
                 },
                 "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "a",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": true,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": [
-                {
-                  "id": "a23eeae2-0b6b-42d0-b468-91182d81aa9e",
-                  "title": "New STRIDE threat",
-                  "status": "Open",
-                  "severity": "TBD",
-                  "type": "Tampering",
-                  "description": "Provide a description for this threat",
-                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
-                  "modelType": "STRIDE",
-                  "new": true,
-                  "number": 10,
-                  "score": ""
-                }
-              ],
-              "trustBoundaryIds": [
-                "1cb50b62-937a-4172-82fa-cd7836593064"
-              ]
-            },
-            "labels": [
-              ""
-            ],
-            "id": "9c93d719-147f-4e48-abbf-e441119bfcf5",
-            "source": {
-              "cell": "c932084e-4841-439e-b303-35809bcd4840",
-              "port": "00d92627-897b-4417-8589-753505de485b"
-            },
-            "target": {
-              "cell": "315f640c-3c7e-426e-a542-35d54f1a0487",
-              "port": "899e052a-298e-4b66-b140-cdee8f854022"
-            },
-            "vertices": [
-              {
-                "x": 1020,
-                "y": 570
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
                   "name": "block"
                 },
                 "strokeDasharray": null
@@ -2286,6 +2217,60 @@
               {
                 "x": 1200,
                 "y": 190
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": [
+                "1cb50b62-937a-4172-82fa-cd7836593064"
+              ]
+            },
+            "labels": [
+              ""
+            ],
+            "id": "9c93d719-147f-4e48-abbf-e441119bfcf5",
+            "source": {
+              "cell": "c932084e-4841-439e-b303-35809bcd4840",
+              "port": "00d92627-897b-4417-8589-753505de485b"
+            },
+            "target": {
+              "cell": "315f640c-3c7e-426e-a542-35d54f1a0487",
+              "port": "899e052a-298e-4b66-b140-cdee8f854022"
+            },
+            "vertices": [
+              {
+                "x": 1020,
+                "y": 570
               }
             ]
           },
